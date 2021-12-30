@@ -7,11 +7,16 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { SharedModule } from '../shared/shared.module';
 import { countriesReducer } from './state';
 import { CountriesEffects } from './state/effects';
+import { CountryDetailsComponent } from './country-details/country-details.component';
+import { CountryListComponent } from './country-list/country-list.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    CountryListComponent,
+    CountryDetailsComponent
+  ],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -21,6 +26,10 @@ import { CountriesEffects } from './state/effects';
       maxAge: 10,
     }),
     SharedModule
-  ]
+  ],
+  exports: [
+    CountryListComponent,
+    CountryDetailsComponent
+  ],
 })
 export class CountriesModule { }
