@@ -1,0 +1,6 @@
+<select class="form-select" [formControl]="selectedItemControl" (change)="changeSelect($event)">
+    <option [value]="null" selected disabled>Please select</option>
+    <option *ngFor="let dataItem of data" [value]="dataItem?.name">
+        {{dataItem?.name}}
+    </option>
+</select>
