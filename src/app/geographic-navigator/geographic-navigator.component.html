@@ -1,0 +1,18 @@
+<ng-container>
+    <app-region-list 
+    [regions]="regions" 
+    [selectedRegionName]="selectedRegion$ | async" 
+    (regionName)="selectedRegionFunc($event)"></app-region-list>
+</ng-container>
+
+<ng-container *ngIf="selectedRegion$ | async">
+    <app-country-list 
+    [countries]="filteredCountries$ | async" 
+    [selectedCountryName]="selectedCountryName$ | async" 
+    (countryName)="selectedCountryFunc($event)"
+    ></app-country-list>
+</ng-container>
+
+<ng-container *ngIf="selectedCountryName$ | async">
+    <app-country-details></app-country-details>
+</ng-container>
