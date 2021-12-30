@@ -1,0 +1,17 @@
+<div class="mb-3 mt-3">
+    <div class="row">
+        <div class="col-md">
+            <label for="select-items">Please select the {{dropDownLabel}}:&nbsp;</label>
+        </div>
+        <div class="col-md" *ngIf="selectedRegionName">
+            <div>Selected {{dropDownLabel}}: {{ selectedRegionName }}</div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md">
+        <app-dropdown-selector [data]="regions" (dataItem)="regionOutput($event)">
+        </app-dropdown-selector>
+    </div>
+</div>
