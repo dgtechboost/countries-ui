@@ -25,7 +25,6 @@ export class CountriesService {
   }
 
   getAllCountriesDetailed(): Observable<Array<CountryModel>> {
-    debugger
     let asianCountries = this._httpClient.get<CountryModel[]>(`${this.countriesUrl}/asia`)
     let europeCountries = this._httpClient.get<CountryModel[]>(`${this.countriesUrl}/europe`)
 
