@@ -2,6 +2,8 @@ import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+  const appTitle = 'countries-ui';
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
@@ -16,16 +18,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'countries-ui'`, () => {
+  it(`should have a title of ${appTitle}`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('countries-ui');
+    expect(app.title).toEqual(appTitle);
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('countries-ui app is running!');
+    expect(compiled.querySelector('h1').textContent).toContain(appTitle);
   });
 });
